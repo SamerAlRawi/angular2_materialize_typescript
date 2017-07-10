@@ -1,6 +1,6 @@
 import { MytsPage } from './app.po';
 
-describe('myts App', () => {
+describe('angular2site App', () => {
   let page: MytsPage;
 
   beforeEach(() => {

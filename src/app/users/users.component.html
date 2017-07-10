@@ -1,3 +1,19 @@
-<p>
-  users works!
-</p>
+<h4>Manage Users</h4>
+
+<app-loading-animation [isLoading]="isLoading"></app-loading-animation> 
+
+<table class="table" *ngIf="!isLoading">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let user of users; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }">
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td><input type="button" class="btn btn-sm btn-danger" (click)="delete(user)" value="DELETE" /></td>
+  </tr>
+</table>

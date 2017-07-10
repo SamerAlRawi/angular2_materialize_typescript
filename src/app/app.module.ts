@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { HomeComponent } from './home/home.component';
+import { LoadingAnimationComponent } from './loading-animation/loading-animation.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponentComponent,
     UsersComponent,
-    HomeComponent
+    HomeComponent,
+    LoadingAnimationComponent
   ],
   imports: [
     BrowserModule,
