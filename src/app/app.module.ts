@@ -6,11 +6,11 @@ import { RouterModule, Routes } from '@angular/router';
 // App
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
-
 import { HeaderComponentComponent } from './header-component/header-component.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: AppComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'users', component: UsersComponent },
   { path: '',
     redirectTo: '/home',
@@ -22,7 +22,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponentComponent,
-    UsersComponent
+    UsersComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
