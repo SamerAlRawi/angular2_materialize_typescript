@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
   }
 
   delete(user: User): void {
-    console.log(user);
+    this.users = this.users.filter((item) => item !== user);
   }
 }
 
