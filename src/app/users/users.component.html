@@ -1,6 +1,18 @@
 <h4>Manage Users</h4>
 
-<app-loading-animation [isLoading]="isLoading"></app-loading-animation> 
+<app-loading-animation [isLoading]="isLoading"></app-loading-animation>
+
+<form class="form-inline" *ngIf="!isLoading">
+  <label class="sr-only" for="inlineFormInput">Name</label>
+  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" [(ngModel)]="user" placeholder="Name" name="name" required>
+  <label class="sr-only" for="inlineFormInputGroup">Email</label>
+  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+    <div class="input-group-addon">@</div>
+    <input type="text" class="form-control" [(ngModel)]="email" placeholder="Email" name="email"> </div>
+  <input type="button" class="btn btn-success" (click)="add()" [disabled]="!canAdd()" value="Add" />
+</form>
+
+<div class="line-seperator"></div>
 
 <table class="table" *ngIf="!isLoading">
   <thead>

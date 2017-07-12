@@ -2,3 +2,9 @@
 body{
     padding: 5px;
 }
+.line-seperator{
+    height:3px;
+    background:#c3c3c3;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}

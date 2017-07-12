@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit, Input } from '@angular/core';
 import { User } from './user';
 
 @Component({
@@ -8,7 +8,10 @@ import { User } from './user';
 })
 export class UsersComponent implements OnInit {
   users: User[];
+  //user: User = new User('', '');
   isLoading = true;
+  @Input() user: string = null;
+  @Input() email: string = null;
 
   constructor() { }
 
@@ -17,6 +20,7 @@ export class UsersComponent implements OnInit {
       this.users = [
         new User('User 1', 'x@y.x'),
         new User('User 3', 'more@y.x'),
+        new User('User 4', 'emsil@yx.com'),
         new User('User 2', 'dsdsd@fde.com')
         ];
         this.isLoading = false;
@@ -26,6 +30,14 @@ export class UsersComponent implements OnInit {
   delete(user: User): void {
     this.users = this.users.filter((item) => item !== user);
   }
+  add(): void {
+    const user = new User(this.user, this.email);
+    console.log(user);
+    this.users.push(user);
+    this.user = '';
+    this.email = '';
+  }
+  canAdd(): boolean {
+    return this.user !== '' && this.email !== '';
+  }
 }
-
-
