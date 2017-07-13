@@ -44,13 +44,22 @@
         <a class="btn-floating btn-small blue" *ngIf="!user.editing">
           <i class="small material-icons" (click)="edit(user)">mode_edit</i>
         </a>
-        <a class="btn-floating btn-small green" *ngIf="user.editing">
+        <a class="btn-floating btn-small green" *ngIf="user.editing" [attr.disabled]="!(user.name && user.email) ? true : null">
           <i class="small material-icons" (click)="save(user)">done</i>
         </a>
         <a class="btn-floating btn-small red">
           <i class="small material-icons" (click)="delete(user)">delete</i>
         </a>
       </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>
+        <a class="waves-effect waves-circle waves-light btn-floating">
+        <i class="material-icons" (click)="addNew()">add</i>
+      </a>
+    </td>
     </tr>
   </table>
 </div>

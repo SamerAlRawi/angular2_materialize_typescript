@@ -40,11 +40,17 @@ export class UsersComponent implements OnInit {
 
   add(): void {
     const user = new User(this.user, this.email);
-    console.log(user);
     this.users.push(user);
     this.user = '';
     this.email = '';
   }
+
+  addNew(): void {
+    const user = new User('', '');
+    user.editing = true;
+    this.users.push(user);
+  }
+
   canAdd(): boolean {
     return this.user !== '' && this.email !== '';
   }
