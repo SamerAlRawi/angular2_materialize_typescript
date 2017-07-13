@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 // App
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
+import { UsersServiceBase, UsersService } from './users/users.service';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { HomeComponent } from './home/home.component';
 import { LoadingAnimationComponent } from './loading-animation/loading-animation.component';
@@ -14,7 +15,8 @@ import { LoadingAnimationComponent } from './loading-animation/loading-animation
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'users', component: UsersComponent },
-  { path: '',
+  {
+    path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   }
@@ -37,7 +39,7 @@ const appRoutes: Routes = [
     )
     // other imports here
   ],
-  providers: [],
+  providers: [{ provide: UsersServiceBase, useClass: UsersService }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

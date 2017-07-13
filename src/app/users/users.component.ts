@@ -1,6 +1,6 @@
 import { Component, NgModule, OnInit, Input } from '@angular/core';
 import { User } from './user';
-
+import { UsersServiceBase } from './users.service'
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -11,19 +11,17 @@ export class UsersComponent implements OnInit {
   isLoading = true;
   @Input() user: string = null;
   @Input() email: string = null;
+  private usersService: UsersServiceBase;
 
-  constructor() { }
+  constructor(usersService: UsersServiceBase) {
+    this.usersService = usersService;
+  }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.users = [
-        new User('User 1', 'x@y.x'),
-        new User('User 3', 'more@y.x'),
-        new User('User 4', 'emsil@yx.com'),
-        new User('User 2', 'dsdsd@fde.com')
-        ];
-        this.isLoading = false;
-    }, 2500);
+    this.usersService.getUsers().then(_ => {
+      this.users = _;
+      this.isLoading = false;
+    });
   }
 
   delete(user: User): void {
