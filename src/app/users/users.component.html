@@ -2,30 +2,55 @@
 
 <app-loading-animation [isLoading]="isLoading"></app-loading-animation>
 
-<form class="form-inline" *ngIf="!isLoading">
-  <label class="sr-only" for="inlineFormInput">Name</label>
-  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" [(ngModel)]="user" placeholder="Name" name="name" required>
-  <label class="sr-only" for="inlineFormInputGroup">Email</label>
-  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-    <div class="input-group-addon">@</div>
-    <input type="text" class="form-control" [(ngModel)]="email" placeholder="Email" name="email"> </div>
-  <input type="button" class="btn btn-success" (click)="add()" [disabled]="!canAdd()" value="Add" />
-</form>
+<div *ngIf="!isLoading">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate" [(ngModel)]="user" name="name" required>
+          <label for="icon_prefix">Username</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <input id="icon_email" type="tel" class="validate" [(ngModel)]="email" name="email">
+          <label for="icon_email">Email</label>
+        </div>
+      </div>
+      <input type="button" class="btn btn-success z-depth-2" (click)="add()" [disabled]="!canAdd()" value="Add" />
+    </form>
+  </div>
 
-<div class="line-seperator"></div>
+  <div class="line-seperator"></div>
 
-<table class="table" *ngIf="!isLoading">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th></th>
+  <table class="bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tr *ngFor="let user of users; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }">
+      <!--readonly-->
+      <td *ngIf="!user.editing">{{user.name}}</td>
+      <td *ngIf="!user.editing">{{user.email}}</td>
+      <!--editing-->
+      <td *ngIf="user.editing"><input id="icon_prefix" type="text" class="validate" [(ngModel)]="user.name" name="name" required></td>
+      <td *ngIf="user.editing"><input id="icon_prefix" type="text" class="validate" [(ngModel)]="user.email" name="email" required></td>
+      <!--action-->
+      <td>
+        <a class="btn-floating btn-small blue" *ngIf="!user.editing">
+          <i class="small material-icons" (click)="edit(user)">mode_edit</i>
+        </a>
+        <a class="btn-floating btn-small green" *ngIf="user.editing">
+          <i class="small material-icons" (click)="save(user)">done</i>
+        </a>
+        <a class="btn-floating btn-small red">
+          <i class="small material-icons" (click)="delete(user)">delete</i>
+        </a>
+      </td>
     </tr>
-  </thead>
-
-  <tr *ngFor="let user of users; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }">
-    <td>{{user.name}}</td>
-    <td>{{user.email}}</td>
-    <td><input type="button" class="btn btn-sm btn-danger" (click)="delete(user)" value="DELETE" /></td>
-  </tr>
-</table>
+  </table>
+</div>

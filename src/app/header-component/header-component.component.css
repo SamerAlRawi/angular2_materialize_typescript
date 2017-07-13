@@ -1,6 +1,13 @@
-h1, h2{
-    display: inline;
+span{
+    font-weight: bolder;
+    vertical-align: middle;
+    padding-bottom: 30px;
 }
-img{
-    display: inline;
+@media only screen and (max-width: 786px) {
+    span {
+        display: none;
+    }
+    img{
+        height: 48px;
+    }
 }

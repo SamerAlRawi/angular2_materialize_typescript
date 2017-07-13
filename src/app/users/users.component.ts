@@ -8,7 +8,6 @@ import { User } from './user';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  //user: User = new User('', '');
   isLoading = true;
   @Input() user: string = null;
   @Input() email: string = null;
@@ -30,6 +29,15 @@ export class UsersComponent implements OnInit {
   delete(user: User): void {
     this.users = this.users.filter((item) => item !== user);
   }
+
+  edit(user: User): void {
+    user.editing = true;
+  }
+
+  save(user: User): void {
+    user.editing = false;
+  }
+
   add(): void {
     const user = new User(this.user, this.email);
     console.log(user);

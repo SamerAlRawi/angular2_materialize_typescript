@@ -1,4 +1,13 @@
-<div *ngIf="isLoading" class="spinner">
-  <div class="double-bounce1"></div>
-  <div class="double-bounce2"></div>
+<div class="preloader-wrapper medium active" *ngIf="isLoading">
+  <div class="spinner-layer spinner-red-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div>
+    <div class="gap-patch">
+      <div class="circle"></div>
+    </div>
+    <div class="circle-clipper right">
+      <div class="circle"></div>
+    </div>
+  </div>
 </div>

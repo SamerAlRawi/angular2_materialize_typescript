@@ -1,0 +1,10 @@
+
+table td:nth-child(1){
+    width: 40%;
+}
+table td:nth-child(2){
+    width: 40%;
+}
+table td:nth-child(3){
+    width: 20%;
+}

@@ -1,13 +1,16 @@
-<div class="row">
-
-  <div class="col-lg-2">
+<nav>
+  <div class="nav-wrapper">
     <app-header-component [title]="title"></app-header-component>
-    <nav>
-      <a routerLink="/home" routerLinkActive="active">Home</a><br/>
-      <a routerLink="/users" routerLinkActive="active">Users</a>
-    </nav>
+
+    <ul class="right">
+      <li><a routerLink="/home" routerLinkActive="active"><i class="material-icons">business</i></a>
+      </li>
+      <li><a routerLink="/users" routerLinkActive="active"><i class="material-icons">supervisor_account</i></a>
+      </li>
+    </ul>
   </div>
-  <div class="col-lg-9">
-    <router-outlet></router-outlet>
-  </div>
+</nav>
+
+<div class="col-lg-9">
+  <router-outlet></router-outlet>
 </div>
