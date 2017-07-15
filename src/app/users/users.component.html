@@ -3,23 +3,7 @@
 <app-loading-animation [isLoading]="isLoading"></app-loading-animation>
 
 <div *ngIf="!isLoading">
-  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate" [(ngModel)]="user" name="name" required>
-          <label for="icon_prefix">Username</label>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">email</i>
-          <input id="icon_email" type="tel" class="validate" [(ngModel)]="email" name="email">
-          <label for="icon_email">Email</label>
-        </div>
-      </div>
-      <input type="button" class="btn btn-success z-depth-2" (click)="add()" [attr.disabled]="!canAdd()" value="Add" />
-    </form>
-  </div>
+  <app-add-user (add)="add($event)" ></app-add-user>
 
   <div class="line-seperator"></div>
 
@@ -56,7 +40,7 @@
       <td></td>
       <td></td>
       <td>
-        <a class="waves-effect waves-circle waves-light btn-floating">
+        <a class="btn-floating">
         <i class="material-icons" (click)="addNew()">add</i>
       </a>
     </td>

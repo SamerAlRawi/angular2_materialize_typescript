@@ -12,6 +12,7 @@ import { UsersServiceBase, UsersService } from './users/users.service';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { HomeComponent } from './home/home.component';
 import { LoadingAnimationComponent } from './loading-animation/loading-animation.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     HeaderComponentComponent,
     UsersComponent,
     HomeComponent,
-    LoadingAnimationComponent
+    LoadingAnimationComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

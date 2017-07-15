@@ -9,8 +9,6 @@ import { UsersServiceBase } from './users.service'
 export class UsersComponent implements OnInit {
   users: User[];
   isLoading = true;
-  @Input() user: string = null;
-  @Input() email: string = null;
   private usersService: UsersServiceBase;
 
   constructor(usersService: UsersServiceBase) {
@@ -36,20 +34,13 @@ export class UsersComponent implements OnInit {
     user.editing = false;
   }
 
-  add(): void {
-    const user = new User(this.user, this.email);
+  add(user: User): void {
     this.users.push(user);
-    this.user = '';
-    this.email = '';
   }
 
   addNew(): void {
     const user = new User('', '');
     user.editing = true;
     this.users.push(user);
-  }
-
-  canAdd(): boolean {
-    return this.user !== '' && this.email !== '';
   }
 }
