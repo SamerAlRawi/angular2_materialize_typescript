@@ -4,7 +4,7 @@ export class User {
     isReadOnly: boolean;
     editing: boolean;
 
-    constructor(name: string, email: string) {
+    constructor(name: string = '', email: string = '') {
         this.name = name;
         this.email = email;
     }

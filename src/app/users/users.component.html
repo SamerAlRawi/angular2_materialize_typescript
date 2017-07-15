@@ -17,7 +17,7 @@
           <label for="icon_email">Email</label>
         </div>
       </div>
-      <input type="button" class="btn btn-success z-depth-2" (click)="add()" [disabled]="!canAdd()" value="Add" />
+      <input type="button" class="btn btn-success z-depth-2" (click)="add()" [attr.disabled]="!canAdd()" value="Add" />
     </form>
   </div>
 
