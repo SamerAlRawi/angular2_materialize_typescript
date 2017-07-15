@@ -41,7 +41,7 @@
       <td *ngIf="user.editing"><input id="icon_prefix" type="text" class="validate" [(ngModel)]="user.email" name="email" required></td>
       <!--action-->
       <td>
-        <a class="btn-floating btn-small blue" *ngIf="!user.editing">
+        <a class="btn-floating btn-small blue" [ngClass]="{'disabled': user.isReadOnly }" *ngIf="!user.editing">
           <i class="small material-icons" (click)="edit(user)">mode_edit</i>
         </a>
         <a class="btn-floating btn-small green" *ngIf="user.editing" [attr.disabled]="!(user.name && user.email) ? true : null">

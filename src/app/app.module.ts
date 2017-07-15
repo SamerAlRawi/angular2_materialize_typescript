@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 // App
@@ -33,13 +34,16 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
     // other imports here
   ],
-  providers: [{ provide: UsersServiceBase, useClass: UsersService }],
+  providers: [
+    { provide: UsersServiceBase, useClass: UsersService },
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

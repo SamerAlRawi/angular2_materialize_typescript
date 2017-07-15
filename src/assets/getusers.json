@@ -1,0 +1,19 @@
+[
+    {
+        "name": "User 1",
+        "email": "my_email@yahoo.com",
+        "isReadOnly": true
+    },
+    {
+        "name": "User 3",
+        "email": "more@y.x"
+    },
+    {
+        "name": "User 4",
+        "email": "email@mail.com"
+    },
+    {
+        "name": "User 2",
+        "email": "user@domain.com"
+    }
+]
