@@ -13,6 +13,9 @@ import { HeaderComponentComponent } from './header-component/header-component.co
 import { HomeComponent } from './home/home.component';
 import { LoadingAnimationComponent } from './loading-animation/loading-animation.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { PortfolioItemComponent } from './portfolio-item/portfolio-item.component';
+import { PortfolioService, PortfolioServiceBase } from './portfolio-item/portfolio.service';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -31,7 +34,9 @@ const appRoutes: Routes = [
     UsersComponent,
     HomeComponent,
     LoadingAnimationComponent,
-    AddUserComponent
+    AddUserComponent,
+    PortfolioItemComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +50,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     { provide: UsersServiceBase, useClass: UsersService },
+    { provide: PortfolioServiceBase, useClass: PortfolioService }
     ],
   bootstrap: [AppComponent]
 })

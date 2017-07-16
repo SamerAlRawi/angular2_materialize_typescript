@@ -1,0 +1,17 @@
+[
+    {
+        "img": "/assets/c-sharp-icon.png",
+        "title": "C#",
+        "description": "Best language ever"
+    },
+    {
+        "img": "/assets/erlang-icon.png",
+        "title": "ERLANG",
+        "description": "Coolest language, Erlang make concurrency in every other languages look usless!"
+    },
+    {
+        "img": "/assets/typescript-icon.png",
+        "title": "TypeScript",
+        "description": "When Javascript stop making sense, typescript is the way to-go!"
+    }
+]
