@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 // App
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 import { UsersServiceBase, UsersService } from './users/users.service';
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'contact-us', component: ContactUsComponent },
   {
     path: '',
     redirectTo: '/home',
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     LoadingAnimationComponent,
     AddUserComponent,
     PortfolioItemComponent,
-    FooterComponent
+    FooterComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

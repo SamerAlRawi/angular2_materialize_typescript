@@ -1,0 +1,27 @@
+<div class="row">
+  <form class="col s12 m8 l6">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="name" name="name" [(ngModel)]="name" type="text" class="validate">
+        <label for="name">Full Name</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">email</i>
+        <input id="email" name="email" [(ngModel)]="email" class="validate">
+        <label for="email">Email</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">message</i>
+        <textarea id="message" name="message" [(ngModel)]="message" class="materialize-textarea"></textarea>
+        <label for="textarea1">Message</label>
+      </div>
+    </div>
+    <a (click)="send()" [attr.disabled]="!(name && email && message) ? true : null" class="waves-effect waves-light btn right">
+      <i class="material-icons left">done</i>
+      send</a>
+  </form>
+</div>
