@@ -11,13 +11,7 @@ export abstract class UsersServiceBase {
 export class UsersService implements UsersServiceBase {
     protected http: Http;
     private usersResponse: any;
-
-    users: User[] = [
-        new User('User 1', 'x@y.x'),
-        new User('User 3', 'more@y.x'),
-        new User('User 4', 'emsil@yx.com'),
-        new User('User 2', 'dsdsd@fde.com')
-    ];
+    users: User[];
 
     constructor(backend: Http) {
         this.http = backend;

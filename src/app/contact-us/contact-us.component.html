@@ -11,6 +11,7 @@
         <input id="email" name="email" [(ngModel)]="email" class="validate">
         <label for="email">Email</label>
       </div>
+
     </div>
 
     <div class="row">
@@ -21,7 +22,6 @@
       </div>
     </div>
     <a (click)="send()" [attr.disabled]="!(name && email && message) ? true : null" class="waves-effect waves-light btn right">
-      <i class="material-icons left">done</i>
-      send</a>
+      <i class="material-icons left">done</i>send</a>
   </form>
 </div>
