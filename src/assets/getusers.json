@@ -2,18 +2,22 @@
     {
         "name": "User 1",
         "email": "my_email@yahoo.com",
-        "isReadOnly": true
+        "isReadOnly": true,
+        "dateCreated": "2017-04-23T11:25:43.511Z"
     },
     {
         "name": "User 3",
-        "email": "more@y.x"
+        "email": "more@y.x",
+        "dateCreated": "2016-04-14T18:25:43.511Z"
     },
     {
         "name": "User 4",
-        "email": "email@mail.com"
+        "email": "email@mail.com",
+        "dateCreated": "2012-04-11T18:25:43.511Z"
     },
     {
         "name": "User 2",
-        "email": "user@domain.com"
+        "email": "user@domain.com",
+        "dateCreated": "2012-12-21T18:25:43.511Z"
     }
 ]

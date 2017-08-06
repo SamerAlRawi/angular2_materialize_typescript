@@ -1,10 +1,13 @@
 
 table td:nth-child(1){
-    width: 40%;
+    width: 30%;
 }
 table td:nth-child(2){
-    width: 40%;
+    width: 30%;
 }
 table td:nth-child(3){
-    width: 20%;
+    width: 25%;
+}
+table td:nth-child(4){
+    width: 15%;
 }

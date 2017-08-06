@@ -18,7 +18,7 @@ export class AddUserComponent implements OnInit {
   }
 
   addUser(): void {
-    this.add.emit(new User(this.user, this.email));
+    this.add.emit(new User(this.user, this.email, new Date()));
     this.user = '';
     this.email = '';
   }
